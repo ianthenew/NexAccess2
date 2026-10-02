@@ -44,337 +44,90 @@
     </style>
 </head>
 <body class="text-gray-800 antialiased selection:bg-emerald-200 selection:text-emerald-900 min-h-screen flex flex-col">
-<!-- Header Section with Mountain Silhouette -->
-<header class="relative bg-emerald-950 pt-20 pb-28 px-6 text-center overflow-hidden">
-<!-- Mountain SVG Backgrounds -->
-<svg class="absolute bottom-0 left-0 w-full h-auto opacity-30 text-emerald-800" preserveaspectratio="none" style="min-height: 120px;" viewbox="0 0 1440 320"><path d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,192C672,181,768,139,864,138.7C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="currentColor" fill-opacity="1"></path></svg>
-<svg class="absolute bottom-0 left-0 w-full h-auto opacity-50 text-emerald-900" preserveaspectratio="none" style="min-height: 100px;" viewbox="0 0 1440 320"><path d="M0,128L60,149.3C120,171,240,213,360,208C480,203,600,149,720,149.3C840,149,960,203,1080,218.7C1200,235,1320,213,1380,202.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill="currentColor" fill-opacity="1"></path></svg>
-<svg class="absolute bottom-0 left-0 w-full h-auto text-emerald-950 translate-y-1" preserveaspectratio="none" style="min-height: 60px;" viewbox="0 0 1440 320"><path d="M0,288L120,277.3C240,267,480,245,720,245.3C960,245,1200,267,1320,277.3L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z" fill="#ebf0ec" fill-opacity="1"></path></svg>
-<div class="relative z-10 max-w-2xl mx-auto">
-<h1 class="text-4xl md:text-5xl font-black text-white tracking-widest mb-4" style="text-shadow: 0 4px 12px rgba(0,0,0,0.2);">知 山 田</h1>
-<h2 class="text-xl md:text-2xl font-bold text-emerald-100/90 tracking-wide">雲端門禁系統教學 SOP</h2>
-<p class="mt-5 text-sm text-emerald-200/70">回歸自然，享受智慧與安心的森活體驗。</p>
-</div>
-</header>
-<!-- Sticky Progress Bar -->
-<div class="sticky top-0 z-50 bg-[#ebf0ec]/90 backdrop-blur-md border-b border-emerald-900/10 px-6 py-4 shadow-sm">
-<div class="max-w-2xl mx-auto">
-<div class="flex items-center justify-between mb-2">
-<span class="text-sm font-bold text-emerald-800" id="progress-pct">設定進度 0%</span>
-<span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-1 rounded-full border border-emerald-200" id="progress-count">0 / 13</span>
-</div>
-<div class="w-full bg-emerald-200/50 rounded-full h-2 overflow-hidden">
-<div class="bg-emerald-600 h-full rounded-full transition-all duration-700 ease-out relative" id="progress-bar" style="width: 0%">
-<div class="absolute inset-0 bg-white/20 w-full h-full" style="background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent); background-size: 1rem 1rem;"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Completion Celebration -->
-<div class="max-w-2xl mx-auto mt-8 px-6 hidden" id="celebration">
-<div class="bg-emerald-800 rounded-2xl p-6 text-white text-center shadow-xl border border-emerald-700 relative overflow-hidden">
-<div class="absolute -right-10 -top-10 opacity-10 text-9xl">🌿</div>
-<div class="relative z-10">
-<h3 class="text-2xl font-bold mb-2 serif-font tracking-wide">設定圓滿完成</h3>
-<p class="text-sm text-emerald-100">您已成功設定並測試完所有的門禁功能，歡迎回家。</p>
-</div>
-</div>
-</div>
-<!-- Timeline Content -->
-<main class="max-w-2xl mx-auto px-6 py-10 flex-grow">
-<div class="relative timeline-container pl-2 md:pl-0" id="timeline">
-<!-- Phase 1 -->
-<div class="mb-14 relative z-10 pl-10 md:pl-12">
-<div class="absolute w-10 h-10 bg-emerald-800 text-white rounded-full -left-5 md:-left-3 flex items-center justify-center ring-4 ring-[#ebf0ec] shadow-md text-sm font-bold serif-font">壹</div>
-<h3 class="text-xl font-bold text-emerald-950 mb-1 serif-font tracking-wide">App 下載與註冊</h3>
-<p class="text-sm text-emerald-700/80 mb-5 font-medium">準備好您的智慧型手機，安裝必備的應用程式。</p>
-<div class="space-y-4">
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="1" onclick="toggleStep(1)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">1. 下載 App 並完成註冊</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">Guarding Vision</span>
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">OmniCloud</span>
-</div>
-<p class="text-sm text-gray-600 leading-relaxed">下載「Guarding Vision」及「OmniCloud」兩款 App，並完成帳號註冊。</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Phase 2 -->
-<div class="mb-14 relative z-10 pl-10 md:pl-12">
-<div class="absolute w-10 h-10 bg-emerald-800 text-white rounded-full -left-5 md:-left-3 flex items-center justify-center ring-4 ring-[#ebf0ec] shadow-md text-sm font-bold serif-font">貳</div>
-<h3 class="text-xl font-bold text-emerald-950 mb-1 serif-font tracking-wide">室內機綁定</h3>
-<p class="text-sm text-emerald-700/80 mb-5 font-medium">將您的手機 App 與家中的對講機平板連線。</p>
-<div class="space-y-4">
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="2" onclick="toggleStep(2)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">2. 綁定室內機序號</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">Guarding Vision</span>
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200">室內機</span>
-</div>
-<p class="text-sm text-gray-600 leading-relaxed">查詢硬體序號：在室內機上，點擊「設定」→ 右下角「進階設定」→ 第二個選項「裝置資訊」，即可查得序號 (Q開頭)。</p><p class="text-sm text-gray-600 mt-2">查得序號後，請於 Guarding Vision App 中輸入該序號以完成綁定。</p><p class="text-sm text-emerald-600 mt-2 font-medium bg-emerald-50 p-2 rounded border border-emerald-100">💡 提醒：預設密碼 000000</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Phase 3 -->
-<div class="mb-14 relative z-10 pl-10 md:pl-12">
-<div class="absolute w-10 h-10 bg-emerald-800 text-white rounded-full -left-5 md:-left-3 flex items-center justify-center ring-4 ring-[#ebf0ec] shadow-md text-sm font-bold serif-font">參</div>
-<h3 class="text-xl font-bold text-emerald-950 mb-1 serif-font tracking-wide">保全與安全功能測試</h3>
-<p class="text-sm text-emerald-700/80 mb-5 font-medium">確保居家安全警報系統運作正常。</p>
-<div class="space-y-4">
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="3" onclick="toggleStep(3)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">3. 磁簧（保全）功能測試</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">Guarding Vision</span>
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200">室內機</span>
-</div>
-<ul class="text-sm text-gray-600 list-disc ml-4 space-y-1.5">
-<li>在室內機上操作「上保全」</li>
-<li>在手機 App 上操作「上保全」</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="4" onclick="toggleStep(4)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">4. 緊急求救功能測試</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">Guarding Vision</span>
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200">室內機</span></div>
-<ul class="text-sm text-gray-600 list-disc ml-4 space-y-1.5">
-<li>確認手機是否收到提醒通知</li>
-<li>確認室內機是否收到提醒通知</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Phase 4 -->
-<div class="mb-14 relative z-10 pl-10 md:pl-12">
-<div class="absolute w-10 h-10 bg-emerald-800 text-white rounded-full -left-5 md:-left-3 flex items-center justify-center ring-4 ring-[#ebf0ec] shadow-md text-sm font-bold serif-font">肆</div>
-<h3 class="text-xl font-bold text-emerald-950 mb-1 serif-font tracking-wide">小門口機功能測試</h3>
-<p class="text-sm text-emerald-700/80 mb-5 font-medium">設定您專屬的人臉辨識與門鈴功能。</p>
-<div class="space-y-4">
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="5" onclick="toggleStep(5)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">5. 人臉辨識設定</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200">小門口機</span>
-</div>
-<p class="text-sm text-gray-600">在小門口機設定人臉，確認電子鎖可以順利開啟。</p>
-</div>
-</div>
-</div>
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="6" onclick="toggleStep(6)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">6. 門鈴測試</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200">小門口機</span>
-</div>
-<p class="text-sm text-gray-600 mb-2">按下門鈴後，確認：</p>
-<ul class="text-sm text-gray-600 list-disc ml-4 space-y-1.5">
-<li>手機是否收到來電／提醒</li>
-<li>室內機是否收到來電／提醒</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="7" onclick="toggleStep(7)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">7. 遠端開門測試</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">Guarding Vision</span>
-</div>
-<p class="text-sm text-gray-600">手機接聽門口機來電後，試用遠端開門功能。</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Phase 5 -->
-<div class="mb-14 relative z-10 pl-10 md:pl-12">
-<div class="absolute w-10 h-10 bg-emerald-800 text-white rounded-full -left-5 md:-left-3 flex items-center justify-center ring-4 ring-[#ebf0ec] shadow-md text-sm font-bold serif-font">伍</div>
-<h3 class="text-xl font-bold text-emerald-950 mb-1 serif-font tracking-wide">大門口機與公共門設定</h3>
-<p class="text-sm text-emerald-700/80 mb-5 font-medium">開通並測試社區公設的進出權限。</p>
-<div class="space-y-4">
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="8" onclick="toggleStep(8)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">8. 綁定公共門金鑰</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">OmniCloud</span>
-</div>
-<ul class="text-sm text-gray-600 list-decimal ml-4 space-y-1.5"><li>戶長由公共門金鑰碼進行首次綁定。</li><li>其他家庭成員，可掃描戶長 App 內分享的 QR Code 申請加入。</li></ul></div>
-</div>
-</div>
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="9" onclick="toggleStep(9)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">9. 上傳人臉至帳號</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">OmniCloud</span>
-</div>
-<p class="text-sm text-gray-600">進入「房屋管理」功能，上傳人臉照片。</p>
-</div>
-</div>
-</div>
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="10" onclick="toggleStep(10)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">10. 公共門通行測試</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">OmniCloud</span>
-</div>
-<p class="text-sm text-gray-600 mb-2">確認以下區域皆可順利進入：</p>
-<ul class="text-sm text-gray-600 list-disc ml-4 space-y-1.5">
-<li>社區大門 / 公共門</li>
-<li>環保室</li>
-</ul>
-</div>
-</div>
-</div><div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="11" onclick="toggleStep(11)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">11. 撥打自家門牌號碼測試</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">Guarding Vision</span>
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200">大門口機</span>
-</div>
-<p class="text-sm text-gray-600">以大門口機撥打自家門牌號碼測試，確認 Guarding Vision 可接通且有畫面。</p>
-<p class="text-sm text-emerald-600 mt-2 font-medium bg-emerald-50 p-2 rounded border border-emerald-100">💡 假設門牌號碼是 33 號，請在大門口機撥打 0033。</p></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Phase 6 -->
-<div class="mb-4 relative z-10 pl-10 md:pl-12">
-<div class="absolute w-10 h-10 bg-emerald-800 text-white rounded-full -left-5 md:-left-3 flex items-center justify-center ring-4 ring-[#ebf0ec] shadow-md text-sm font-bold serif-font">陸</div>
-<h3 class="text-xl font-bold text-emerald-950 mb-1 serif-font tracking-wide">進階生活功能</h3>
-<p class="text-sm text-emerald-700/80 mb-5 font-medium">學習訪客邀請與智取櫃的使用方式。</p>
-<div class="space-y-4">
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="12" onclick="toggleStep(12)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">12. 訪客設定教學</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">OmniCloud</span>
-</div>
-<p class="text-sm text-gray-600 mb-2">開啟「登記訪客」功能：</p><ul class="text-sm text-gray-600 list-disc ml-4 space-y-1.5 mb-2"><li>預約訪客可設定人臉及長效期。</li><li>臨時訪客為產生 QR Code 提供掃描。</li></ul><p class="text-sm text-gray-600">並再開啟「訪客管理」，可管理過去預約訪客的名單。</p></div>
-</div>
-</div>
-<div class="step-card border border-emerald-900/10 rounded-xl p-5 shadow-sm cursor-pointer" data-step="13" onclick="toggleStep(13)">
-<div class="flex gap-4">
-<button class="chk-btn mt-1 shrink-0 w-6 h-6 rounded border-2 border-emerald-300 flex items-center justify-center text-transparent focus:outline-none pointer-events-none">✓</button>
-<div>
-<h4 class="text-base font-bold text-emerald-950 step-title">13. 取物櫃功能教學</h4>
-<div class="flex flex-wrap gap-2 mt-2 mb-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">OmniCloud</span>
-</div>
-<p class="text-sm text-emerald-600 mb-2 font-medium bg-emerald-50 p-2 rounded border border-emerald-100">💡 提醒：人員請先移動到物流室</p><ul class="text-sm text-gray-600 list-decimal ml-4 space-y-1.5 mt-2"><li>點開「信件簽收」，試一次手機開啟取物櫃及列印簽收單功能。</li><li>測試以人臉辨識開啟專屬取物櫃。</li></ul></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Reset Button -->
-<div class="mt-16 text-center">
-<button class="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-bold text-emerald-800/60 bg-transparent border border-emerald-800/30 rounded-full hover:bg-emerald-50 hover:text-emerald-900 transition-colors focus:outline-none" onclick="resetAll()">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                重新開始設定
-            </button>
-</div>
-</main>
-<footer class="mt-auto border-t border-emerald-900/10 py-8 text-center text-xs font-bold text-emerald-800/50 tracking-widest serif-font">
-        家鼎建設 ✕ 知山田社區
-    </footer>
+<div id="lock-screen" class="fixed inset-0 z-[9999] bg-emerald-950 flex flex-col items-center justify-center p-6">
+    <div class="max-w-sm w-full bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl text-center">
+        <h1 class="text-4xl font-black text-white tracking-widest mb-2" style="font-family: 'Noto Serif TC', serif; text-shadow: 0 4px 12px rgba(0,0,0,0.2);">知 山 田</h1>
+        <h2 class="text-lg text-emerald-100/90 tracking-wide mb-8">系統存取驗證</h2>
+        <input type="password" id="password-input" placeholder="請輸入存取密碼" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 mb-4 transition-all">
+        <button onclick="checkPassword()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg transition-colors shadow-lg">解鎖</button>
+        <p id="error-msg" class="text-red-300 text-sm mt-4 hidden">密碼錯誤，請重試</p>
+    </div>
+</div>
+<div id="decrypted-content" style="display: contents;"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script>
-        const TOTAL_STEPS = 13;
-        const STORAGE_KEY = 'zhishantian_sop_v4_nature';
-        let checked = {};
+const ciphertext = "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";
+const STORE_KEY = 'zhishantian_access_key';
 
-        try {
-            const saved = localStorage.getItem(STORAGE_KEY);
-            if (saved) checked = JSON.parse(saved);
-        } catch(e) {}
-
-        document.addEventListener('DOMContentLoaded', () => {
-            for (let i = 1; i <= TOTAL_STEPS; i++) {
-                if (checked[i]) updateUI(i, true);
-            }
-            updateProgress();
-        });
-
-        function toggleStep(n) {
-            checked[n] = !checked[n];
-            updateUI(n, checked[n]);
-            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); } catch(e) {}
-            updateProgress();
+function decryptContent(key) {
+    try {
+        const bytes = CryptoJS.AES.decrypt(ciphertext, key);
+        const originalText = bytes.toString(CryptoJS.enc.Utf8);
+        if (originalText && (originalText.includes('<') || originalText.trim().length > 0)) {
+            return originalText;
         }
+    } catch (e) {
+        return null;
+    }
+    return null;
+}
 
-        function updateUI(n, isChecked) {
-            const card = document.querySelector(`.step-card[data-step="${n}"]`);
-            const btn = card.querySelector('.chk-btn');
-            if (isChecked) {
-                btn.classList.add('active');
-                card.classList.add('done');
-            } else {
-                btn.classList.remove('active');
-                card.classList.remove('done');
-            }
+function executeScripts() {
+    const container = document.getElementById('decrypted-content');
+    const scripts = container.getElementsByTagName('script');
+    const scriptsToExecute = [];
+    for (let i = 0; i < scripts.length; i++) {
+        scriptsToExecute.push(scripts[i]);
+    }
+    
+    scriptsToExecute.forEach(script => {
+        const newScript = document.createElement('script');
+        if (script.src) {
+            newScript.src = script.src;
+        } else {
+            newScript.textContent = script.textContent;
         }
+        document.body.appendChild(newScript);
+    });
+    
+    setTimeout(() => {
+        document.dispatchEvent(new Event('DOMContentLoaded'));
+    }, 100);
+}
 
-        function updateProgress() {
-            const count = Object.values(checked).filter(Boolean).length;
-            const pct = Math.round((count / TOTAL_STEPS) * 100);
-            
-            document.getElementById('progress-bar').style.width = `${pct}%`;
-            document.getElementById('progress-pct').textContent = `設定進度 ${pct}%`;
-            document.getElementById('progress-count').textContent = `${count} / ${TOTAL_STEPS}`;
-            
-            const banner = document.getElementById('celebration');
-            if (count === TOTAL_STEPS) {
-                banner.classList.remove('hidden');
-                setTimeout(() => banner.classList.remove('opacity-0', 'scale-95'), 50);
-            } else {
-                banner.classList.add('hidden');
-            }
-        }
+function checkPassword() {
+    const pwd = document.getElementById('password-input').value;
+    const decrypted = decryptContent(pwd);
+    if (decrypted) {
+        document.getElementById('decrypted-content').innerHTML = decrypted;
+        document.getElementById('lock-screen').style.display = 'none';
+        localStorage.setItem(STORE_KEY, pwd);
+        executeScripts();
+    } else {
+        document.getElementById('error-msg').classList.remove('hidden');
+    }
+}
 
-        function resetAll() {
-            if (!confirm('確定要清除所有打勾進度嗎？')) return;
-            checked = {};
-            for (let i = 1; i <= TOTAL_STEPS; i++) updateUI(i, false);
-            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); } catch(e) {}
-            updateProgress();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+// Auto decrypt on load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedKey = localStorage.getItem(STORE_KEY);
+    if (savedKey) {
+        const decrypted = decryptContent(savedKey);
+        if (decrypted) {
+            document.getElementById('decrypted-content').innerHTML = decrypted;
+            document.getElementById('lock-screen').style.display = 'none';
+            executeScripts();
         }
-    </script>
+    }
+    
+    document.getElementById('password-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            checkPassword();
+        }
+    });
+});
+</script>
 </body>
 </html>
 
